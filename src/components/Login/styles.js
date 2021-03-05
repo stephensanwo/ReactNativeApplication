@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../assets/theme/colors';
 
 export default StyleSheet.create({
   logoImage: {
@@ -23,5 +24,16 @@ export default StyleSheet.create({
   },
   form: {
     paddingTop: 20,
+  },
+  createSection: {
+    flexDirection: 'row',
+  },
+  linkBtn: {
+    paddingLeft: 5,
+    color: colors.primary,
+    fontSize: 14,
+  },
+  infoText: {
+    fontSize: 14,
   },
 });

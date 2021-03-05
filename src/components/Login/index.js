@@ -1,11 +1,14 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Touchable, TouchableOpacity} from 'react-native';
 import Container from '../../components/common/Container';
 import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/CustomButton';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
+import {REGISTER} from '../../constants/routeNames';
 
 const LoginComponent = () => {
+  const {navigate} = useNavigation();
   return (
     <Container>
       <Image
@@ -33,6 +36,15 @@ const LoginComponent = () => {
             secureTextEntry={true}
           />
           <CustomButton primary title="Submit" />
+          <View style={styles.createSection}>
+            <Text style={styles.infoText}> Need a new account?</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigate(REGISTER);
+              }}>
+              <Text style={styles.linkBtn}> Register</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Container>
